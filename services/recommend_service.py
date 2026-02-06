@@ -1,4 +1,5 @@
 from core.database import supabase
 
-def get_all_products():
-  return supabase.table("products").select("*").execute()
+def get_category_tree():
+  response = supabase.table("category_tree").select("result").single().execute()
+  return response.data['result']
