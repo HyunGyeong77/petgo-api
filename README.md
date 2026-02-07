@@ -30,6 +30,7 @@
 ```.env
 SUPABASE_URL=<your-supabase-url>
 SUPABASE_KEY=<your-supabase-key>
+CORS_ORIGINS=<your-cors-origins> # url,url (쉼표로 분리)
 ```
 
 <br>
