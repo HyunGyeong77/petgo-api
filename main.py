@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from routers import recommends
+from routers.home import recommends
 from core.config import cors_origins
 
 app = FastAPI()
