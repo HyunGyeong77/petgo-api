@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from routers.home import recommends
+from routers.home import router as home_router
 from core.config import cors_origins
 
 app = FastAPI()
@@ -15,4 +15,4 @@ app.add_middleware(
 )
 
 # routers 연결
-app.include_router(recommends.router)
+app.include_router(home_router, prefix="/api")
