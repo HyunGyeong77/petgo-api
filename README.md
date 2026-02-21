@@ -4,8 +4,10 @@
 
 ## API 소개
 
-이 API는 **DB에 저장된 상품 정보를 프론트엔드로 전달**하는 역할을 합니다.   
-- `GET /recommend` : 모든 상품 목록 조회
+이 API는 **DB에 저장된 정보들을 프론트엔드로 전달**하는 역할을 합니다.  
+- `GET /api/home/recommend` : 모든 상품 목록 조회
+- `GET /api/home/hospital/sido` : 모든 시/도 목록 조회
+- `GET /api/home/hospital/region?level&code` : 상위 지역 코드(code)와 지역 단계(level)에 따라 하위 지역 목록을 조회
 
 <br>
 
