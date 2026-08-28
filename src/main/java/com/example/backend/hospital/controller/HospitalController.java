@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins =  "https://petgo-orcin.vercel.app")
 @RequestMapping("/api/hospital")
 public class HospitalController {
   private final HospitalService hospitalService;
