@@ -6,5 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface RegionRepository extends JpaRepository<Region, String> {
+
+  List<Region> findByLevelIn(List<Integer> level);
+
   List<Region> findByParentCodeAndLevelIn(String code, List<Integer> level);
 }

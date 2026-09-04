@@ -9,13 +9,15 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins =  "https://petgo-orcin.vercel.app")
 @RequestMapping("/api/hospital")
 public class HospitalController {
   private final HospitalService hospitalService;
 
-  @GetMapping("/regions/{code}")
-  public List<RegionResponse> getRegions(@PathVariable String code, @RequestParam List<Integer> level) {
+  @GetMapping("/regions")
+  public List<RegionResponse> getRegions(
+    @RequestParam(required = false) String code,
+    @RequestParam List<Integer> level
+  ) {
     return hospitalService.getRegions(code, level);
   }
 }

@@ -10,3 +10,8 @@ spring:
     username: ${SUPABASE_DB_USERNAME}
     password: ${SUPABASE_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
+cors:
+  allowed-origins:
+    - https://petgo-orcin.vercel.app
+    - http://localhost:3000
