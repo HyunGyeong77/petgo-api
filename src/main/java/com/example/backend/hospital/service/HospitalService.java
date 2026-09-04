@@ -14,12 +14,22 @@ public class HospitalService {
   private final RegionRepository regionRepository;
 
   public List<RegionResponse> getRegions(String code, List<Integer> level) {
-    List<Region> regions = regionRepository.findByParentCodeAndLevelIn(code, level);
+    List<Region> regions;
+
+    if (code == null)
+      regions = regionRepository.findByLevelIn(level);
+    else
+      regions = regionRepository.findByParentCodeAndLevelIn(code, level);
 
     return regions.stream().map(region -> new RegionResponse(
       region.getCode(),
-      region.getName(),
+      getShortName(region.getName()),
       region.getLevel()
     )).toList();
+  }
+
+  private String getShortName(String name) {
+    String[] names = name.split(" ");
+    return names[names.length - 1];
   }
 }
