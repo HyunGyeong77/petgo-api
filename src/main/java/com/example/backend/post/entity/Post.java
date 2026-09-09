@@ -3,7 +3,6 @@ package com.example.backend.post.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -25,7 +24,4 @@ public class Post {
   private Integer readtime;
 
   private Boolean preview;
-
-  @OneToMany(mappedBy = "post")
-  private List<PostCategoryRelation> categories;
 }
