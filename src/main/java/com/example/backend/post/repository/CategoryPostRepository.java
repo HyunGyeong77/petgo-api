@@ -1,14 +1,22 @@
 package com.example.backend.post.repository;
 
-import com.example.backend.post.dto.CategoryPostRow;
 import com.example.backend.post.dto.PostCategoryRow;
+import com.example.backend.post.entity.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
 import java.util.UUID;
 
-public interface CategoryPostRepository {
+public interface CategoryPostRepository
+  extends JpaRepository<Category, UUID>, CategoryPostRepositoryCustom {
 
-  PostCategoryRow findCategory(UUID categoryId);
-
-  List<CategoryPostRow> findPosts(UUID categoryId);
+  @Query("""
+    SELECT new com.example.backend.post.dto.PostCategoryRow(
+        c.title,
+        c.description
+    )
+    FROM PostCategory c
+    WHERE c.id = :categoryId
+  """)
+  PostCategoryRow findCategoryRowById(UUID categoryId);
 }

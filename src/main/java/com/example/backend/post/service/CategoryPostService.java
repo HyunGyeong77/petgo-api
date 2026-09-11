@@ -18,7 +18,7 @@ public class CategoryPostService {
 
   public CategoryPostResponse getCategoryPost(UUID categoryId) {
 
-    PostCategoryRow category = categoryPostRepository.findCategory(categoryId);
+    PostCategoryRow category = categoryPostRepository.findCategoryRowById(categoryId);
 
     List<CategoryPostRow> posts = categoryPostRepository.findPosts(categoryId);
 

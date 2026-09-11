@@ -15,25 +15,9 @@ import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
-public class CategoryPostRepositoryImpl implements CategoryPostRepository {
+public class CategoryPostRepositoryImpl implements CategoryPostRepositoryCustom {
 
   private final JPAQueryFactory queryFactory;
-
-  @Override
-  public PostCategoryRow findCategory(UUID categoryId) {
-
-    QCategory category = QCategory.category;
-
-    return queryFactory
-      .select(Projections.constructor(
-        PostCategoryRow.class,
-        category.title,
-        category.description
-      ))
-      .from(category)
-      .where(category.id.eq(categoryId))
-      .fetchOne();
-  }
 
   @Override
   public List<CategoryPostRow> findPosts(UUID categoryId) {
