@@ -1,7 +1,7 @@
 package com.example.backend.recommend.controller;
 
-import com.example.backend.recommend.dto.ParentCategoryResponse;
-import com.example.backend.recommend.service.ProductService;
+import com.example.backend.recommend.dto.RecommendParentCategoryResponse;
+import com.example.backend.recommend.service.RecommendProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +14,10 @@ import java.util.List;
 @RequestMapping("/api/recommend")
 public class RecommendController {
 
-  private final ProductService productService;
+  private final RecommendProductService productService;
 
   @GetMapping("/category/all")
-  public List<ParentCategoryResponse> getCategoryTree() {
+  public List<RecommendParentCategoryResponse> getCategoryTree() {
 
     return productService.getCategories();
   }

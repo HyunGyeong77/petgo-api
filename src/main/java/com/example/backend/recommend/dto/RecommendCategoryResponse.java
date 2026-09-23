@@ -2,8 +2,8 @@ package com.example.backend.recommend.dto;
 
 import java.util.List;
 
-public record CategoryResponse(
+public record RecommendCategoryResponse(
   String label,
-  List<ProductResponse> products
+  List<RecommendProductResponse> products
 ) {
 }

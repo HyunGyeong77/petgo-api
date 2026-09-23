@@ -2,14 +2,14 @@ spring:
   application:
     name: backend
 
-  server:
-    port: ${PORT:8080}
-
   datasource:
     url: ${SUPABASE_DB_URL}
     username: ${SUPABASE_DB_USERNAME}
     password: ${SUPABASE_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
+server:
+  port: ${PORT:8080}
 
 cors:
   allowed-origins:
