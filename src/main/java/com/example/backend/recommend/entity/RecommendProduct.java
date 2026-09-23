@@ -2,6 +2,7 @@ package com.example.backend.recommend.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "products")
 @Getter
-public class Product {
+@Setter
+public class RecommendProduct {
 
   @Id
   @Column(name = "product_id")

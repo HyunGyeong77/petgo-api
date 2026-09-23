@@ -2,11 +2,13 @@ package com.example.backend.recommend.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "product_category")
 @Getter
-public class ProductCategoryRelation {
+@Setter
+public class RecommendProductCategoryRelation {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,9 +16,9 @@ public class ProductCategoryRelation {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "category_id")
-  private Category category;
+  private RecommendCategory category;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "product_id")
-  private Product product;
+  private RecommendProduct product;
 }

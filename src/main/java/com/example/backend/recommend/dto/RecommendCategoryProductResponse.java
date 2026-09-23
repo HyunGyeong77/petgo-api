@@ -1,7 +1,9 @@
 package com.example.backend.recommend.dto;
 
-public record ProductResponse (
-  int id,
+
+public record RecommendCategoryProductResponse(
+  int categoryId,
+  int productId,
   String name,
   String description,
   String image,

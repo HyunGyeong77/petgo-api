@@ -1,6 +1,6 @@
 package com.example.backend.recommend.repository;
 
-import com.example.backend.recommend.dto.CategoryProduct;
+import com.example.backend.recommend.dto.RecommendCategoryProductResponse;
 import com.example.backend.recommend.entity.*;
 import com.querydsl.core.types.Projections;
 import lombok.RequiredArgsConstructor;
@@ -11,11 +11,12 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class CategoryRepositoryImpl implements CategoryRepositoryCustom {
+public class RecommendCategoryRepositoryImpl implements RecommendCategoryRepositoryCustom {
 
   private final JPAQueryFactory queryFactory;
 
   @Override
+<<<<<<< Updated upstream:src/main/java/com/example/backend/recommend/repository/CategoryRepositoryImpl.java
   public List<Category> findParents() {
 
     QCategory category = QCategory.category;
@@ -39,14 +40,17 @@ public class CategoryRepositoryImpl implements CategoryRepositoryCustom {
 
   @Override
   public List<CategoryProduct> findProductsByCategoryIds(List<Integer> categoryIds) {
+=======
+  public List<RecommendCategoryProductResponse> findProductsByCategoryIds(List<Integer> categoryIds) {
+>>>>>>> Stashed changes:src/main/java/com/example/backend/recommend/repository/RecommendCategoryRepositoryImpl.java
 
-    QProductCategoryRelation relation = QProductCategoryRelation.productCategoryRelation;
+    QRecommendProductCategoryRelation relation = QRecommendProductCategoryRelation.recommendProductCategoryRelation;
 
-    QProduct product = QProduct.product;
+    QRecommendProduct product = QRecommendProduct.recommendProduct;
 
     return queryFactory
       .select(Projections.constructor(
-        CategoryProduct.class,
+        RecommendCategoryProductResponse.class,
         relation.category.id,
         product.productId,
         product.name,

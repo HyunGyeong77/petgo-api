@@ -2,14 +2,19 @@ package com.example.backend.recommend.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
+<<<<<<< Updated upstream:src/main/java/com/example/backend/recommend/entity/Category.java
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+>>>>>>> Stashed changes:src/main/java/com/example/backend/recommend/entity/RecommendCategory.java
 @Entity
 @Table(name = "categories")
 @Getter
-public class Category {
+@Setter
+public class RecommendCategory {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +25,5 @@ public class Category {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "parent_id")
-  private Category parent;
-
-  @OneToMany(mappedBy = "parent")
-  private List<Category> children = new ArrayList<>();
+  private RecommendCategory parent;
 }

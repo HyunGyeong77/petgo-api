@@ -21,9 +21,11 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
@@ -32,6 +34,10 @@ dependencies {
     annotationProcessor("jakarta.annotation:jakarta.annotation-api")
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
     implementation("org.springframework.boot:spring-boot-starter-security")
+
+    testImplementation(platform("org.testcontainers:testcontainers-bom:1.21.3"))
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:postgresql")
 }
 
 tasks.withType<Test> {
