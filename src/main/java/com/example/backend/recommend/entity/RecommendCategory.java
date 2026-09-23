@@ -4,12 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-<<<<<<< Updated upstream:src/main/java/com/example/backend/recommend/entity/Category.java
-import java.util.ArrayList;
-import java.util.List;
-
-=======
->>>>>>> Stashed changes:src/main/java/com/example/backend/recommend/entity/RecommendCategory.java
 @Entity
 @Table(name = "categories")
 @Getter

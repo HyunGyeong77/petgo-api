@@ -16,7 +16,7 @@ public class RecommendProduct {
   @Id
   @Column(name = "product_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int productId;
+  private int id;
 
   private String name;
 

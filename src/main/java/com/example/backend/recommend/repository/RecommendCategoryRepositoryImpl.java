@@ -16,33 +16,7 @@ public class RecommendCategoryRepositoryImpl implements RecommendCategoryReposit
   private final JPAQueryFactory queryFactory;
 
   @Override
-<<<<<<< Updated upstream:src/main/java/com/example/backend/recommend/repository/CategoryRepositoryImpl.java
-  public List<Category> findParents() {
-
-    QCategory category = QCategory.category;
-
-    return queryFactory
-      .selectFrom(category)
-      .where(category.parent.isNull())
-      .fetch();
-  }
-
-  @Override
-  public List<Category> findChildren(List<Integer> categoryIds) {
-
-    QCategory category = QCategory.category;
-
-    return queryFactory
-      .selectFrom(category)
-      .where(category.parent.id.in(categoryIds))
-      .fetch();
-  }
-
-  @Override
-  public List<CategoryProduct> findProductsByCategoryIds(List<Integer> categoryIds) {
-=======
   public List<RecommendCategoryProductResponse> findProductsByCategoryIds(List<Integer> categoryIds) {
->>>>>>> Stashed changes:src/main/java/com/example/backend/recommend/repository/RecommendCategoryRepositoryImpl.java
 
     QRecommendProductCategoryRelation relation = QRecommendProductCategoryRelation.recommendProductCategoryRelation;
 
@@ -52,7 +26,7 @@ public class RecommendCategoryRepositoryImpl implements RecommendCategoryReposit
       .select(Projections.constructor(
         RecommendCategoryProductResponse.class,
         relation.category.id,
-        product.productId,
+        product.id,
         product.name,
         product.description,
         product.image,
