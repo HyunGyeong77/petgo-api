@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("test")
 @Import(QuerydslConfig.class)
-public class CategoryRepositoryTest {
+public class RecommendCategoryRepositoryTest {
 
   @Container
   static PostgreSQLContainer<?> postgres =
