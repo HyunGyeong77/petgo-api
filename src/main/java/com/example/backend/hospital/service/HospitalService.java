@@ -1,8 +1,8 @@
 package com.example.backend.hospital.service;
 
-import com.example.backend.hospital.dto.RegionResponse;
-import com.example.backend.hospital.entity.Region;
-import com.example.backend.hospital.repository.RegionRepository;
+import com.example.backend.hospital.dto.HospitalRegionResponse;
+import com.example.backend.hospital.entity.HospitalRegion;
+import com.example.backend.hospital.repository.HospitalRegionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,17 +11,18 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class HospitalService {
-  private final RegionRepository regionRepository;
+  private final HospitalRegionRepository regionRepository;
 
-  public List<RegionResponse> getRegions(String code, List<Integer> level) {
-    List<Region> regions;
+  public List<HospitalRegionResponse> getRegions(String code, List<Integer> level) {
+
+    List<HospitalRegion> regions;
 
     if (code == null)
       regions = regionRepository.findByLevelIn(level);
     else
       regions = regionRepository.findByParentCodeAndLevelIn(code, level);
 
-    return regions.stream().map(region -> new RegionResponse(
+    return regions.stream().map(region -> new HospitalRegionResponse(
       region.getCode(),
       getShortName(region.getName()),
       region.getLevel()

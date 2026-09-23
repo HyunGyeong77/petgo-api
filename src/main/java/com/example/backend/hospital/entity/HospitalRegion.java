@@ -9,7 +9,7 @@ import lombok.Getter;
 @Entity
 @Table(name = "regions")
 @Getter
-public class Region {
+public class HospitalRegion {
 
   @Id
   private String code;
