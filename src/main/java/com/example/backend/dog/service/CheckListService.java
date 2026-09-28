@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -22,7 +23,7 @@ public class CheckListService {
     long seed = LocalDate.now().toEpochDay();
 
     // 전체 체크리스트 조회
-    List<CheckListResponse> checkLists = checkListRepository.findAllCheckLists();
+    List<CheckListResponse> checkLists = new ArrayList<>(checkListRepository.findAllCheckLists());
 
     // 오늘 날짜에 따라 결정적인 랜덤 순서 생성
     Collections.shuffle(checkLists, new Random(seed));
