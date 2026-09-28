@@ -5,11 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "regions")
 @Getter
-public class Region {
+@Setter
+public class HospitalRegion {
 
   @Id
   private String code;

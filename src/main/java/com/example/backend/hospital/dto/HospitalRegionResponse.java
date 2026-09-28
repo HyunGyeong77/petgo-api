@@ -1,7 +1,6 @@
 package com.example.backend.hospital.dto;
 
-
-public record RegionResponse (
+public record HospitalRegionResponse(
   String code,
   String name,
   int level
