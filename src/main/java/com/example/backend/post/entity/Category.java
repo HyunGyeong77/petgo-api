@@ -25,6 +25,10 @@ public class Category {
 
   private String icon;
 
+  public Category(UUID id) {
+    this.id = id;
+  }
+
   public Category(UUID id, String title, String description, String icon) {
     this.id = id;
     this.title = title;
