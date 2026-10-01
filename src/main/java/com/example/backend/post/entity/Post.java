@@ -49,4 +49,11 @@ public class Post {
     this.readtime = readtime;
     this.preview = preview;
   }
+
+  public Post(UUID id, String title, String level, Integer readtime) {
+    this.id = id;
+    this.title = title;
+    this.level = level;
+    this.readtime = readtime;
+  }
 }

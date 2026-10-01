@@ -4,6 +4,7 @@ import com.example.backend.post.dto.PostCategoryRow;
 import com.example.backend.post.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.UUID;
 
@@ -18,5 +19,5 @@ public interface CategoryPostRepository
     FROM PostCategory c
     WHERE c.id = :categoryId
   """)
-  PostCategoryRow findCategoryRowById(UUID categoryId);
+  PostCategoryRow findCategoryRowById(@Param("categoryId") UUID categoryId);
 }
