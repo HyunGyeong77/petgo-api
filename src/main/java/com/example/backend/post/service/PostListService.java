@@ -20,7 +20,7 @@ public class PostListService {
   public List<CategoryPostListResponse> getPostList() {
 
     Map<UUID, List<CategoryPostRow>> postByCategory = postRepositoryCustom.findPosts().stream()
-      .collect(Collectors.groupingBy(CategoryPostRow::id));
+      .collect(Collectors.groupingBy(CategoryPostRow::categoryId));
 
     return postByCategory.entrySet().stream()
       .map(entry -> new CategoryPostListResponse(

@@ -1,5 +1,7 @@
 package com.example.backend.post.service;
 
+import com.example.backend.exception.business.BusinessException;
+import com.example.backend.exception.post.PostCategoryErrorCode;
 import com.example.backend.post.dto.CategoryPostResponse;
 import com.example.backend.post.dto.CategoryPostRow;
 import com.example.backend.post.dto.PostCategoryRow;
@@ -19,6 +21,12 @@ public class CategoryPostService {
   public CategoryPostResponse getCategoryPost(UUID categoryId) {
 
     PostCategoryRow category = categoryPostRepository.findCategoryRowById(categoryId);
+
+    if (category == null) {
+      throw new BusinessException(
+        PostCategoryErrorCode.CATEGORY_NOT_FOUND
+      );
+    }
 
     List<CategoryPostRow> posts = categoryPostRepository.findPosts(categoryId);
 

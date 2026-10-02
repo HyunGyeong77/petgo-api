@@ -1,7 +1,6 @@
 package com.example.backend.post.repository;
 
 import com.example.backend.post.dto.CategoryPostRow;
-import com.example.backend.post.dto.PostCategoryRow;
 import com.example.backend.post.entity.QCategory;
 import com.example.backend.post.entity.QPost;
 import com.example.backend.post.entity.QPostCategoryRelation;
@@ -26,9 +25,12 @@ public class CategoryPostRepositoryImpl implements CategoryPostRepositoryCustom 
 
     QPost post =  QPost.post;
 
+    QCategory category = QCategory.category;
+
     return queryFactory
       .select(Projections.constructor(
         CategoryPostRow.class,
+        category.id,
         post.id,
         post.title,
         post.level,
