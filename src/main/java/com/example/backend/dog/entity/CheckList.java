@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -22,5 +23,5 @@ public class CheckList {
   private String title;
 
   @Column(name = "created_at")
-  private OffsetDateTime createdAt;
+  private Instant createdAt;
 }
