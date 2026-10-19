@@ -1,6 +1,6 @@
 package com.example.backend.recommend.repository;
 
-import com.example.backend.config.QuerydslConfig;
+import com.example.backend.global.querydsl.QuerydslConfig;
 import com.example.backend.recommend.dto.RecommendCategoryProductResponse;
 import com.example.backend.recommend.entity.RecommendCategory;
 import com.example.backend.recommend.entity.RecommendProduct;
