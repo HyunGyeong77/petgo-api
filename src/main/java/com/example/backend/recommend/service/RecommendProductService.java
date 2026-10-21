@@ -1,9 +1,9 @@
 package com.example.backend.recommend.service;
 
-import com.example.backend.exception.business.BusinessException;
-import com.example.backend.exception.productcategory.ProductCategoryChildErrorCode;
-import com.example.backend.exception.productcategory.ProductCategoryParentErrorCode;
-import com.example.backend.exception.productcategory.ProductCategoryProductErrorCode;
+import com.example.backend.global.exception.business.BusinessException;
+import com.example.backend.global.exception.productcategory.ProductCategoryChildErrorCode;
+import com.example.backend.global.exception.productcategory.ProductCategoryParentErrorCode;
+import com.example.backend.global.exception.productcategory.ProductCategoryProductErrorCode;
 import com.example.backend.recommend.dto.RecommendCategoryProductResponse;
 import com.example.backend.recommend.dto.RecommendCategoryResponse;
 import com.example.backend.recommend.dto.RecommendParentCategoryResponse;
