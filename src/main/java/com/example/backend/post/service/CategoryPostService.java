@@ -1,7 +1,7 @@
 package com.example.backend.post.service;
 
-import com.example.backend.exception.business.BusinessException;
-import com.example.backend.exception.post.PostCategoryErrorCode;
+import com.example.backend.global.exception.business.BusinessException;
+import com.example.backend.global.exception.post.PostCategoryErrorCode;
 import com.example.backend.post.dto.CategoryPostResponse;
 import com.example.backend.post.dto.CategoryPostRow;
 import com.example.backend.post.dto.PostCategoryRow;
